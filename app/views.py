@@ -23,7 +23,6 @@ def display_topics(request):
     return render(request,'display_topics.html',d)
 
 def display_webpages(request):
-   
     LOW=Webpage.objects.all().order_by(Length('player_name').desc())
     
     d={'webpages':LOW}
@@ -44,3 +43,4 @@ def display_access(request):
     
     d={'access':LOA}
     return render(request,'display_access.html',d)
+

@@ -8,14 +8,11 @@ class Topic(models.Model):
         return self.topic_name
 class Webpage(models.Model):
     topic_name=models.ForeignKey(Topic,on_delete=models.CASCADE)
-    player_name=models.CharField(max_length=100)
+    name=models.CharField(max_length=100)
     url=models.URLField()
     def __str__(self):
             return self.player_name
 
-
 class Access_Records(models.Model):
-    player_name=models.ForeignKey(Webpage,on_delete=models.CASCADE)
+    name=models.ForeignKey(Webpage,on_delete=models.CASCADE)
     date=models.DateField()
-    def __str__(self):
-            return self.player_name
